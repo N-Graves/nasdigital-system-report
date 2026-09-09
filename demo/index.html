@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>System report — NAS Digital</title>
+    <meta
+      name="description"
+      content="See the real specs of the computer you are on — graphics card, processor, memory, screen — and copy them into a support message. Runs in your browser and uploads nothing."
+    />
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="../dist/system-report.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "System report",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any browser",
+        "description": "Reads the specs the browser will tell you about the computer you are on - graphics card, processor threads, memory, screen and connection - and formats them as plain text to paste into a support message. Nothing is uploaded.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+        "featureList": [
+          "Graphics card and vendor, where the browser will say",
+          "Processor threads, memory and screen resolution",
+          "Flags a browser that looks several versions out of date",
+          "Copies the whole report as plain text for an email",
+          "Runs entirely in the browser with no upload"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="eyebrow">Free tool</p>
+      <h1>System report</h1>
+      <p class="lede">
+        What the computer you are on will admit to. Useful before a call-out — copy this into your
+        message and the specs arrive before anyone gets in a van.
+      </p>
+
+      <noscript>
+        <p class="sr-drivers">
+          This one reads the specs using JavaScript, so it needs it switched on. Nothing is uploaded
+          either way.
+        </p>
+      </noscript>
+
+      <section class="sr glass" data-sr style="padding: clamp(1rem, 4vw, 2rem); border-radius: 16px">
+        <div class="sr-actions">
+          <button type="button" class="sr-copy" data-sr-copy>Copy report</button>
+        </div>
+        <p class="sr-status" data-sr-status role="status"></p>
+
+        <p class="sr-verdict" data-sr-verdict>Reading what the browser will tell us…</p>
+
+        <div class="sr-report" data-sr-report></div>
+
+        <p class="sr-drivers">
+          <strong>A website cannot see what drivers you have installed.</strong> No browser exposes
+          that, to any page, ever — so anything claiming to scan for outdated drivers is either
+          guessing from your graphics card model or trying to sell you something. Get them from the
+          people who made the hardware:
+          <a href="https://www.nvidia.com/Download/index.aspx" rel="nofollow noopener">NVIDIA</a>,
+          <a href="https://www.amd.com/en/support" rel="nofollow noopener">AMD</a>, or
+          <a href="https://www.intel.com/content/www/us/en/download-center/home.html" rel="nofollow noopener">Intel</a>.
+        </p>
+      </section>
+
+      <h2>Why some of it says "not available"</h2>
+      <p>
+        Browsers differ in what they will admit to, and some deliberately hide things to make you
+        harder to track. Firefox with resistance to fingerprinting turned on reports its graphics
+        card as "Mozilla", which this tool treats as hidden rather than repeating back at you. Memory
+        is rounded and capped at 8&nbsp;GB by every browser that reports it at all, so a 64&nbsp;GB
+        machine says "8 GB or more" — which is why it is worded that way rather than stated flatly.
+      </p>
+
+      <h2>The browser-age check is an estimate, and says so</h2>
+      <p>
+        Rather than a list of current version numbers baked in — which would be wrong within a month
+        of being written, and confidently wrong within three — it works forward from a known release
+        date at each browser's own release cadence. If your version is <em>ahead</em> of that
+        estimate it says nothing, because that means this tool is behind, not you. And past a
+        certain age it stops guessing altogether and tells you so.
+      </p>
+
+      <h2>Nothing here is uploaded</h2>
+      <p>
+        Every figure is read in your own browser and stays there. The Copy button puts the report on
+        your clipboard so <em>you</em> can paste it wherever you like — the page never sends it
+        anywhere, and makes no network requests at all.
+      </p>
+    </main>
+
+    <script src="../dist/system-report.js" defer></script>
+  </body>
+</html>
