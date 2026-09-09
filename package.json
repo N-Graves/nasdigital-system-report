@@ -1,0 +1,33 @@
+{
+  "name": "nasdigital-system-report",
+  "version": "0.1.0",
+  "private": true,
+  "description": "See the real specs of the computer you are on, ready to copy into a support message. Runs in the browser, uploads nothing.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "demo": "npm run build && node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "@nasdigitaluk/withnate-tool-core": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "author": "Nathan Graves",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N-Graves/nasdigital-system-report.git"
+  },
+  "bugs": { "url": "https://github.com/N-Graves/nasdigital-system-report/issues" },
+  "homepage": "https://github.com/N-Graves/nasdigital-system-report#readme",
+  "keywords": ["system", "specs", "hardware", "diagnostics", "browser", "client-side", "nasdigital"]
+}
